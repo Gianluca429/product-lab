@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { CatalogComponent } from './src/app/components/catalog/catalog';
+import { CatalogComponent } from './components/catalog/catalog';
 
 @Component({
   imports: [RouterOutlet, CatalogComponent],

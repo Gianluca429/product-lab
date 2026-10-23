@@ -8,5 +8,5 @@ import { CatalogService } from '../../services/catalog-service';
   templateUrl: './catalog.html',
 })
 export class CatalogComponent {
-  constructor(private CatalogService: CatalogService) {}
+  constructor(private catalogService: CatalogService) {}
 }

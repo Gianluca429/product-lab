@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CatalogService } from '../../services/catalog-service';
 
 @Component({
   imports: [],
@@ -6,4 +7,6 @@ import { Component } from '@angular/core';
   styleUrl: './catalog.scss',
   templateUrl: './catalog.html',
 })
-export class CatalogComponent {}
+export class CatalogComponent {
+  constructor(private CatalogService: CatalogService) {}
+}

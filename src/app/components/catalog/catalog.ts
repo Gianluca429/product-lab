@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit } from '@angular/core';
 import { CatalogService } from '../../services/catalog-service';
 
 @Component({
@@ -7,14 +7,16 @@ import { CatalogService } from '../../services/catalog-service';
   styleUrl: './catalog.scss',
   templateUrl: './catalog.html',
 })
-export class CatalogComponent implements OnInit {
-  constructor(private catalogService: CatalogService) {}
+export class CatalogComponent implements OnChanges {
+  constructor(private catalogService: CatalogService) {
+    this.showProducts();
+  }
   productsToShow: number = 0;
-  ngOnInit() {
+  ngOnChanges() {
     this.showProducts();
   }
 
   showProducts() {
-    return (this.productsToShow = this.catalogService.prodotti.length);
+    this.productsToShow = this.catalogService.prodotti.length;
   }
 }

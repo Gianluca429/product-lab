@@ -1,3 +1,4 @@
+import { products } from './initial-data.data';
 import { Component } from '@angular/core';
 import { CatalogService } from '../../services/catalog-service';
 
@@ -8,12 +9,5 @@ import { CatalogService } from '../../services/catalog-service';
   templateUrl: './catalog.html',
 })
 export class CatalogComponent {
-  constructor(private catalogService: CatalogService) {
-    this.showProducts();
-  }
-  productsToShow: number = 0;
-
-  showProducts() {
-    this.productsToShow = this.catalogService.prodotti.length;
-  }
+  constructor(public catalogService: CatalogService) {}
 }

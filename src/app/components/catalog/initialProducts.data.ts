@@ -4,4 +4,5 @@ export const products: Products[] = [
   { id: 1, name: 'mouse', price: 25 },
   { id: 2, name: 'keyboard', price: 30 },
   { id: 3, name: 'monitor', price: 50 },
+  { id: 4, name: 'phone-stand', price: 15 },
 ];

@@ -1,4 +1,3 @@
-import { products } from './initial-data.data';
 import { Component } from '@angular/core';
 import { CatalogService } from '../../services/catalog-service';
 

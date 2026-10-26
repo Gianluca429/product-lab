@@ -6,4 +6,9 @@ import { products } from '../components/catalog/initialProducts.data';
 })
 export class CatalogService {
   prodotti = signal(products);
+
+  updateProducts() {
+    const newProduct = { id: 5, name: 'headset', price: 25 };
+    this.prodotti.update((prodotti) => [...prodotti, newProduct]);
+  }
 }

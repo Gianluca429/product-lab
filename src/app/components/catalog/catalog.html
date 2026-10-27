@@ -3,3 +3,7 @@
   <button (click)="catalogService.updateProducts()">Aggiungi prodotto</button>
 </div>
 <p>Prodotti disponibili: {{ catalogService.prodottiTotali() }}</p>
+
+@for (p of catalogService.prodotti(); track $index) {
+  <p>{{ p.id }}</p>
+}

@@ -9,7 +9,11 @@ export class CatalogService {
   prodottiTotali = computed(() => this.prodotti().length);
 
   updateProducts() {
-    const newProduct = { id: this.prodotti().length++, name: 'headset', price: 25 };
+    const newProduct = {
+      id: this.prodotti()[this.prodotti().length - 1].id + 1,
+      name: 'headset',
+      price: 25,
+    };
     this.prodotti.update((prodotti) => [...prodotti, newProduct]);
   }
 }

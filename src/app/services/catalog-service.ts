@@ -6,7 +6,7 @@ import { products } from '../components/catalog/initialProducts.data';
 })
 export class CatalogService {
   prodotti = signal(products);
-  prodottiTotali = computed(() => this.prodotti.length);
+  prodottiTotali = computed(() => this.prodotti().length);
 
   updateProducts() {
     const newProduct = { id: 5, name: 'headset', price: 25 };

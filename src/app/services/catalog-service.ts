@@ -1,4 +1,4 @@
-import { computed, Injectable, signal } from '@angular/core';
+import { computed, effect, Injectable, signal } from '@angular/core';
 import { products } from '../components/catalog/initialProducts.data';
 
 @Injectable({
@@ -7,6 +7,7 @@ import { products } from '../components/catalog/initialProducts.data';
 export class CatalogService {
   prodotti = signal(products);
   prodottiTotali = computed(() => this.prodotti().length);
+  console: any;
 
   updateProducts() {
     const newProduct = {
@@ -15,5 +16,8 @@ export class CatalogService {
       price: 25,
     };
     this.prodotti.update((prodotti) => [...prodotti, newProduct]);
+    this.console = effect(() =>
+      console.log('Ci sono ' + this.prodottiTotali + ' prodotti in catalogo'),
+    );
   }
 }

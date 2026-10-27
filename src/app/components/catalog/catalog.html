@@ -4,6 +4,6 @@
 </div>
 <p>Prodotti disponibili: {{ catalogService.prodottiTotali() }}</p>
 
-@for (p of catalogService.prodotti(); track $index) {
+@for (p of catalogService.prodotti(); track p.id) {
   <p>{{ p.id }}</p>
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit, signal } from '@angular/core';
 import { PokemonService } from '../../services/pokemon-service';
 import { pokemon } from './initialPokemon.data';
+import { PokemonInterface } from './pokemon.model';
 
 @Component({
   imports: [],
@@ -9,7 +10,7 @@ import { pokemon } from './initialPokemon.data';
   templateUrl: './pokedex.html',
 })
 export class PokedexComponent implements OnInit {
-  Pikachu = signal(pokemon);
+  Pikachu = signal<PokemonInterface | null>(null);
   constructor(public pokemonService: PokemonService) {}
 
   ngOnInit(): void {

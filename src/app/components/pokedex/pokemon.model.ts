@@ -1,6 +1,6 @@
 export interface PokemonInterface {
   name: string;
-  img?: string;
-  abilities?: [];
-  type?: [];
+  sprites?: { front_default: string };
+  abilities?: {};
+  type?: {};
 }

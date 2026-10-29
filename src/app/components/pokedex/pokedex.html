@@ -1,3 +1,5 @@
 <p>pokedex works!</p>
-
-<p>{{ Pikachu() }}</p>
+@if (Pikachu() != null) {
+  <p>{{ Pikachu()?.name }}</p>
+  <img src="{{ Pikachu()?.sprites?.front_default }}" />
+}

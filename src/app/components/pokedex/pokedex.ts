@@ -1,6 +1,5 @@
 import { Component, OnInit, signal } from '@angular/core';
 import { PokemonService } from '../../services/pokemon-service';
-import { pokemon } from './initialPokemon.data';
 import { PokemonInterface } from './pokemon.model';
 
 @Component({
@@ -18,7 +17,7 @@ export class PokedexComponent implements OnInit {
   }
 
   getPika() {
-    this.pokemonService.getPokemon().subscribe((pika: any) => {
+    this.pokemonService.getPokemon().subscribe((pika) => {
       this.Pikachu.set(pika);
       console.log(this.Pikachu());
     });

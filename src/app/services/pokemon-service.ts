@@ -1,4 +1,3 @@
-import { pokemon } from './../components/pokedex/initialPokemon.data';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { PokemonInterface } from '../components/pokedex/pokemon.model';

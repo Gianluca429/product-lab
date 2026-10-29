@@ -9,4 +9,8 @@ import { PokemonService } from '../../services/pokemon-service';
 })
 export class PokedexComponent {
   constructor(public pokemonService: PokemonService) {}
+
+  getPika() {
+    return this.pokemonService.getPokemon().subscribe();
+  }
 }

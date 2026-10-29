@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
 import { PokemonService } from '../../services/pokemon-service';
 
 @Component({
@@ -7,14 +7,18 @@ import { PokemonService } from '../../services/pokemon-service';
   styleUrl: './pokedex.scss',
   templateUrl: './pokedex.html',
 })
-export class PokedexComponent {
-  constructor(public pokemonService: PokemonService) {
+export class PokedexComponent implements OnInit {
+  Pikachu: any;
+  constructor(public pokemonService: PokemonService) {}
+
+  ngOnInit(): void {
     this.getPika();
   }
 
   getPika() {
     this.pokemonService.getPokemon().subscribe((pika) => {
       console.log(pika);
+      this.Pikachu = pika;
     });
   }
 }

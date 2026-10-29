@@ -8,9 +8,13 @@ import { PokemonService } from '../../services/pokemon-service';
   templateUrl: './pokedex.html',
 })
 export class PokedexComponent {
-  constructor(public pokemonService: PokemonService) {}
+  constructor(public pokemonService: PokemonService) {
+    this.getPika();
+  }
 
   getPika() {
-    return this.pokemonService.getPokemon().subscribe();
+    this.pokemonService.getPokemon().subscribe((pika) => {
+      console.log(pika);
+    });
   }
 }

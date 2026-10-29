@@ -1,9 +1,10 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CatalogComponent } from './components/catalog/catalog';
+import { PokedexComponent } from './components/pokedex/pokedex';
 
 @Component({
-  imports: [RouterOutlet, CatalogComponent],
+  imports: [RouterOutlet, CatalogComponent, PokedexComponent],
   selector: 'app-root',
   styleUrl: './app.scss',
   templateUrl: './app.html',

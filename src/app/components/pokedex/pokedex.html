@@ -2,4 +2,10 @@
 @if (Pikachu() != null) {
   <p>{{ Pikachu()?.name }}</p>
   <img src="{{ Pikachu()?.sprites?.front_default }}" />
+  @for (p of Pikachu()?.types; track p.slot) {
+    <p>{{ p.type.name }}</p>
+  }
+  @for (p of Pikachu()?.abilities; track p.slot) {
+    <p>{{ p.ability.name }}</p>
+  }
 }

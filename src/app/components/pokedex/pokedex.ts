@@ -1,4 +1,4 @@
-import { Component, OnInit, signal } from '@angular/core';
+import { Component, OnInit, signal, effect } from '@angular/core';
 import { PokemonService } from '../../services/pokemon-service';
 import { PokemonInterface } from './pokemon.model';
 
@@ -17,9 +17,14 @@ export class PokedexComponent implements OnInit {
   }
 
   getPika() {
-    this.pokemonService.getPokemon().subscribe((pika) => {
-      this.Pikachu.set(pika);
-      console.log(this.Pikachu());
+    this.pokemonService.getPokemon().subscribe({
+      next: (pika) => {
+        this.Pikachu.set(pika);
+        console.log(this.Pikachu());
+      },
+      error: (err) => {
+        console.log('Errore durante il recupero del Pokémon', err);
+      },
     });
   }
 }
